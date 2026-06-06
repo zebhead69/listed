@@ -110,7 +110,7 @@ export async function removeBackground(imageBuffer: Buffer): Promise<Buffer> {
           alpha_matting_erode_size:            10,
           only_mask:                           false,
         },
-      }) as string  // returns a data URI
+      }) as unknown as string  // returns a data URI
 
       if (!output || !output.includes(',')) {
         throw new Error('rembg returned an unexpected response format')
